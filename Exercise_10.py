@@ -1,21 +1,16 @@
-# Import Random Module
 import random
+a = [random.randint(0, 20) for item in range(random.randint(0, 15))]
+b = [random.randint(0, 20) for item in range(random.randint(0, 15))]
 
-# creating lists
-list_a = [random.randint(1, 20) for numbers in range(random.randint(5, 20))]
-print(list_a)
-list_b = []
-for numbers in range(random.randint(1, 20)):
-    list_b.append(random.randint(5, 25))
-print(list_b)
+print(a)
+print(b)
 
-# common elements of lists without duplicate
-list_common = []
-for number_a in list_a:
-    if number_a in list_a and number_a in list_b:
-        if number_a not in list_common:
-            list_common.append(number_a)
-
-# print common list in order
-list_common.sort()
-print(list_common)
+common = [item_a for item_a in a if item_a in b]
+common.sort()
+print(common)
+common_without_dubble = []
+for num in common:
+    if num not in common_without_dubble:
+        common_without_dubble.append(num)
+common_without_dubble.sort()
+print(common_without_dubble)
